@@ -16,8 +16,8 @@
     <img src="{{ $src }}" width="90" style="border-radius:8px;">
 
     <div style="flex:1;">
-        <h2 style="font-size:20px; margin-bottom:5px;">{{ $item['name'] }}</h2>
-        <p style="color:#bbb;">{{ number_format($item['price'], 0, ',', ' ') }} FCFA</p>
+        <h2 style="font-size:20px; margin-bottom:5px;">{{ $product->name }}</h2>
+        <p style="color:#bbb;">{{ number_format($product->price, 0, ',', ' ') }} $</p>
     </div>
 
     <form action="{{ route('cart.update', $id) }}" method="POST">

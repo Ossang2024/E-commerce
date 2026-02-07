@@ -29,13 +29,13 @@
                         : asset('storage/'.$item['image']);
                 @endphp
 
-                <div style="display:flex; gap:20px; background:#1a1a1a; padding:20px; border-radius:12px; align-items:center;">
+                <div style="display:flex; gap:20px; background:#1a1a1a; padding:20px 10px; border-radius:12px; align-items:center; flex-wrap: wrap;  ">
 
                     <img src="{{ $src }}" width="90" style="border-radius:8px;">
 
                     <div style="flex:1;">
                         <h2 style="font-size:20px; margin-bottom:5px;">{{ $item['name'] }}</h2>
-                        <p style="color:#bbb;">{{ number_format($item['price'], 0, ',', ' ') }} FCFA</p>
+                        <p style="color:#bbb;">{{ number_format($item['price'], 0, ',', ' ') }} $</p>
                     </div>
 
                     <form action="{{ route('cart.update', $id) }}" method="POST">

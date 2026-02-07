@@ -163,6 +163,30 @@
         color: #aaa;
     }
 
+    @media (max-width: 700px) {
+        .filters {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-input,
+        .filter-select {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .products-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .product-card img{
+            object-fit: cover;
+        }
+    }
+
 </style>
 
 </x-app-layout>
