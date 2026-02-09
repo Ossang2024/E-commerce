@@ -76,7 +76,7 @@
     </header>
 
     <div id="mobile-menu"
-        style="position:fixed; top:0; right:-260px; width:260px; height:100vh; background:#212121; padding:40px 20px;
+        style="position:fixed; top:0; right:-300px; width:260px; height:100vh; background:#212121; padding:40px 20px;
                 display:flex; flex-direction:column; gap:25px; transition:0.3s; z-index:9999;">
 
         <button id="close-menu"
