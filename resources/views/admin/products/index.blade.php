@@ -43,7 +43,7 @@
 
 
                     <td style="padding:12px;">{{ $product->name }}</td>
-                    <td style="padding:12px;">{{ $product->price }} FCFA</td>
+                    <td style="padding:12px;">{{ $product->price }} $</td>
                     <td style="padding:12px;">{{ $product->category }}</td>
 
                     <td style="padding:12px;">

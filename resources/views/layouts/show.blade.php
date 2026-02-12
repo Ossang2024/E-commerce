@@ -30,7 +30,7 @@
     </form>
 
     <div style="font-size:18px; font-weight:700;">
-        {{ number_format($itemTotal, 0, ',', ' ') }} FCFA
+        {{ number_format($itemTotal, 0, ',', ' ') }} $
     </div>
 
     <a href="{{ route('cart.remove', $id) }}"
