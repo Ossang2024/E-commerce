@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="{{asset('images/favicon (2).ico')}}" type="image/x-icon">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
@@ -50,7 +51,7 @@
 
             <div class="logo">
                 <a href="{{ url('/') }}" style="color: {{ request()->routeIs('/') ? '#4CAF50' : '#777' }};">
-                    <img src="https://lavipnoir.com/wp-content/uploads/2025/12/ChatGPT-Image-May-7_-2025_-12_20_27-PM-Photoroom-120x120.png" alt="" >
+                    <img src="{{ asset('images/ChatGPT-Image-May-7_-2025_-12_20_27-PM-Photoroom-120x120.png') }}" alt="Logo" >
                 </a>
             </div>
 

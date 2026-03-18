@@ -108,23 +108,23 @@
     }
 
     .card1 {
-        background-image: url(https://lavipnoir.com/wp-content/uploads/2025/12/flowerbg.png);
+        background-image: url({{ asset('images/flowerbg.png') }});
     }
 
     .card2 {
-        background-image: url(https://lavipnoir.com/wp-content/uploads/2025/12/carts.png);
+        background-image: url({{ asset('images/carts.png') }});
     }
 
     .card3 {
-        background-image: url(https://lavipnoir.com/wp-content/uploads/2025/12/waxshatcategory.png);
+        background-image: url({{ asset('images/waxshatcategory.png') }});
     }
 
     .card4 {
-        background-image: url(https://lavipnoir.com/wp-content/uploads/2025/12/prerolls_vi.png);
+        background-image: url({{ asset('images/prerolls_vi.png') }});
     }
 
     .card5 {
-        background-image: url(https://lavipnoir.com/wp-content/uploads/2025/12/edibles_graphic.png);
+        background-image: url({{ asset('images/edibles_graphic.png') }});
     }
 
     .card:hover {
