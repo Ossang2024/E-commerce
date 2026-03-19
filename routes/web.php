@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\ProductAdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CheckoutController;
-use Illuminate\Support\Facades\Artisan;
+// use Illuminate\Support\Facades\Artisan;
 
 Route::get('/', function () {
     return view('landing');
@@ -113,10 +113,10 @@ Route::get('/order/confirm', [CheckoutController::class, 'confirm'])->name('orde
 
 
 
-Route::get('/run-migrations', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migrations exécutées avec succès !';
-});
+// Route::get('/run-migrations', function () {
+//     Artisan::call('migrate', ['--force' => true]);
+//     return 'Migrations exécutées avec succès !';
+// });
 
 
 require __DIR__.'/auth.php';
