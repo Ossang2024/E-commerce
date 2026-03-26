@@ -1,42 +1,50 @@
-<x-app-layout>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accès au site</title>
+    <link rel="stylesheet" href="/css/access.css">
+</head>
+<body>
 
-@section('title', 'Accès Restreint')
+<div class="access-container">
 
+    <h2>Entrer le code d'accès</h2>
 
-<div class="container">
-        <div class="access-container">
+    @if ($errors->any())
+        <p class="error-message">{{ $errors->first() }}</p>
+    @endif
 
-        <h2>Entrer le code d’accès</h2>
+    <form method="POST" action="{{ route('access.code.check') }}">
+        @csrf
+        <input type="password" name="code" placeholder="Code secret">
+        <button type="submit">Entrer</button>
+    </form>
 
-        @if(session('error'))
-            <p class="error-message">{{ session('error') }}</p>
-        @endif
-
-        <form action="{{ route('access.check') }}" method="POST">
-            @csrf
-
-            <input type="password" name="code"
-                placeholder="Code secret"
-                style="width:100%; padding:12px; border-radius:6px; margin-bottom:20px;">
-
-            <button type="submit"
-                    style="background:#4CAF50; padding:12px 20px; color:white; border:none; border-radius:6px;">
-                Valider
-            </button>
-        </form>
-
-    </div>
 </div>
 
+
 <style>
+    /* ====== RESET ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
-    .container{
-        display: flex;
-        justify-content: center;   
-        padding: 50px;
-    }
+/* ====== PAGE ====== */
+body {
+    background: #0d0d0d;
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .access-container {
+/* ====== CONTAINER ====== */
+.access-container {
     background: #111111;
     padding: 40px 35px;
     border-radius: 12px;
@@ -101,7 +109,5 @@
 }
 </style>
 
-</x-app-layout>
-
-
-
+</body>
+</html>

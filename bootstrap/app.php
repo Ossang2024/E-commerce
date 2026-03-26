@@ -11,18 +11,17 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-         $middleware->alias([
-            'is_admin' => \App\Http\Middleware\IsAdminMiddleware::class,
-        ]);
-    })  
-    
-    ->withMiddleware(function (Middleware $middleware) {
+
+        // Tous les alias dans UN SEUL endroit
         $middleware->alias([
-            'secret' => \App\Http\Middleware\SecretAccess::class,
+            'is_admin' => \App\Http\Middleware\IsAdminMiddleware::class,
+            'secret'   => \App\Http\Middleware\SecretAccess::class,
+            'site'     => \App\Http\Middleware\SiteAccess::class,
         ]);
+
+        // Rien d’autre ici pour l’instant
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    })->create();
-
-    
+    })
+    ->create();

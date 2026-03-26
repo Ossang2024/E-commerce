@@ -30,7 +30,7 @@
                 $count = array_sum(array_column($cart, 'quantity'));
             @endphp
 
-            <a href="{{ route('cart.index') }}" style="position:relative; margin-left:20px; color: {{ request()->routeIs('about') ? '#4CAF50' : '#fff' }};">
+            <a href="{{ route('cart.index') }}" style="position:relative; margin-left:20px; color: {{ request()->routeIs('cart.index') ? ' #777' : '#fff' }};" class="cart">
                 <i class="fa-solid fa-cart-shopping" style="font-size:20px;"></i>
 
                 @if($count > 0)
@@ -50,13 +50,13 @@
             </a>
 
             <div class="logo">
-                <a href="{{ url('/') }}" style="color: {{ request()->routeIs('/') ? '#4CAF50' : '#777' }};">
+                <a href="{{ url('/') }}" style="color: {{ request()->routeIs('/') ? '#777' : '#fff' }};">
                     <img src="{{ asset('images/ChatGPT-Image-May-7_-2025_-12_20_27-PM-Photoroom-120x120.png') }}" alt="Logo" >
                 </a>
             </div>
 
             <div class="admin">
-                <a href="{{ route('admin.dashboard') }}" class="admin" >
+                <a href="{{ route('admin.dashboard') }}" class="admin" style="color: {{ request()->routeIs('admin.dashboard') ? '#777' : '#fff' }};">
                     <i class="fa-solid fa-user-gear"></i>
                 </a>
             </div>
@@ -64,10 +64,10 @@
 
         <!-- Niveau 2 -->
         <nav class="header-nav">
-            <a href="/menu">Menu</a>
-            <a href="/about">About Us</a>
-            <a href="/how-to-order">How to Order</a>
-            <a href="/verify">Verify</a>
+            <a href="/menu" class="{{ request()->is('menu') ? 'active' : '' }}">Menu</a>
+            <a href="/about" class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
+            <a href="/how-to-order" class="{{ request()->routeIs('howto') ? 'active' : '' }}">How to Order</a>
+            <a href="/verify" class="{{ request()->routeIs('verify') ? 'active' : '' }}">Verify</a>
         </nav>
 
         <button id="hamburger">
@@ -85,10 +85,10 @@
             ✕
         </button>
 
-        <a href="/menu">Menu</a>
-        <a href="/about">About Us</a>
-        <a href="/how-to-order">How to Order</a>
-        <a href="/verify">Verify</a>
+        <a href="/menu" class="{{ request()->routeIs('menu') ? 'active' : '' }}">Menu</a>
+        <a href="/about" class="{{ request()->routeIs('about') ? 'active' : '' }}">About Us</a>
+        <a href="/how-to-order" class="{{ request()->routeIs('howto') ? 'active' : '' }}">How to Order</a>
+        <a href="/verify" class="{{ request()->routeIs('verify') ? 'active' : '' }}">Verify</a>
     </div>
 
     <!-- CONTENU DES PAGES -->
@@ -156,6 +156,10 @@
            color: #fff;
            width: 100%;
            filter: invert(1) brightness(1.5);
+        }
+
+        .active {
+            color: #777 !important;
         }
 
         .cart, .admin {
